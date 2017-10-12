@@ -8,3 +8,5 @@ requests
 # For text-to-speech pc:
 Flask
 pyttsx
+
+#michael test from git bash
