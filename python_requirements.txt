@@ -1,0 +1,10 @@
+# Package requirements: build-essential python-dev python-smbus python-pip
+
+# For raspberry pi:
+# (On GitHub) Adafruit_Python_CharLCD Adafruit_Python_MPR121
+RPi.GPIO
+requests
+
+# For text-to-speech pc:
+Flask
+pyttsx
