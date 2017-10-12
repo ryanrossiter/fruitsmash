@@ -8,3 +8,5 @@ requests
 # For text-to-speech pc:
 Flask
 pyttsx
+
+# some random test on eclipse
