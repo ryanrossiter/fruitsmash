@@ -16,3 +16,11 @@ def result():
     return 'GOT IT!'
 
 say('BEGIN.')
+
+def callFruit(fruit):
+    if fruit.lower() == "lemon":
+        say(request.form['lemon'])
+    if fruit.lower() == "lime":
+        say(request.form['lime'])
+    if fruit.lower() == "orange":
+        say(request.form['orange'])

@@ -1,6 +1,6 @@
 import random
-import speech_test.py import callFruit
-import touch_test.py import #insert function of using the touch sensor
+from speech_test.py import callFruit
+from touch_test.py import touchedFruit
 
 #game structure
 
@@ -19,12 +19,13 @@ def main():
         
         
 
-        fruitTouched = #function using touch sensor
+        fruitTouched = touchedFruit()
         if fruitTouched == "lime" and fruit == 0:
-            points++
+            points += 1
         elif fruitTouched == "lemon" and fruit == 1:
-            points++
+            points += 1
         elif fruitTouched == "orange" and fruit == 2:
-            points++
+            points += 1
+
 main()
 
