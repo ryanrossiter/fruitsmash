@@ -26,6 +26,8 @@ def main():
     gameOn = True
     timeToHit = 4
     while (gameOn):
+        if points % 5 == 0 and 5 < points < 50:
+            timeToHit -= 0.3
         fruit = random.randint(0,2)
         if fruit == 0:
             callFruit("lime")
@@ -37,7 +39,10 @@ def main():
         #somehow link touchedFruit() function to the interrupting function.
 
         fruitTouched = input_with_timeout(timeToHit)
-        if fruitTouched == "lime" and fruit == 0:
+        
+        if fruitTouched == None:
+            gameOn = False
+        elif fruitTouched == "lime" and fruit == 0:
             points += 1
         elif fruitTouched == "lemon" and fruit == 1:
             points += 1
