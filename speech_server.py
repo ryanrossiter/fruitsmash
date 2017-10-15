@@ -17,10 +17,14 @@ def result():
 
 say('BEGIN.')
 
-def callFruit(fruit):
+def sayFruit(fruit):
     if fruit.lower() == "lemon":
         say(request.form['lemon'])
     if fruit.lower() == "lime":
         say(request.form['lime'])
     if fruit.lower() == "orange":
         say(request.form['orange'])
+        
+def sayTimesUp():
+    say(request.form['Times up'])
+    say(request.form['Game over'])

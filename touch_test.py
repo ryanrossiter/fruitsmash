@@ -77,4 +77,16 @@ while True:
     #print('Base:', '\t'.join(map(str, base)))
 
 def touchedFruit():
+    last_touched = cap.touched()
+    while True:
+        current_touched = cap.touched()
+        # Check each pin's last and current state to see if it was pressed or released.
+        for i in range(12):
+            # Each pin is represented by a bit in the touched value.  A value of 1
+            # means the pin is being touched, and 0 means it is not being touched.
+            pin_bit = 1 << i
+            # First check if transitioned from not touched to touched.
+            if current_touched & pin_bit and not last_touched & pin_bit:
+                print('{0} touched!'.format(i))
+                return '{0} touched!'.format(i)
     
