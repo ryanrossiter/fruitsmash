@@ -2,17 +2,23 @@ import time
 
 import Adafruit_CharLCD as LCD
 
+# Initialize the LCD using the pins
+lcd = LCD.Adafruit_CharLCDPlate()
+
 def displayScore(points):
-    lcd.message('POINTS')
-    lcd.message(points)
+    lcd.clear()
+    lcd.message('POINTS\n')
+    lcd.message(str(points))
     
-def displayFruit(fruit):
-    if fruit.lower() == "lemon":
-        lcd.message('LEMON')
-    if fruit.lower() == "lime":
-        lcd.message('LIME')
-    if fruit.lower() == "orange":
-        lcd.message('ORANGE')
+def displayText(text):
+    lcd.clear()
+    lcd.message(text)
         
 def displayTimesUp():
+    lcd.clear()
     lcd.message('GAME OVER')
+
+def displayConfigFruit(fruit):
+    lcd.clear()
+    lcd.message('TOUCH FRUIT:\n')
+    lcd.message(fruit)
