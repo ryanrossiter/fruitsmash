@@ -1,5 +1,5 @@
 import random
-from speech import say
+from fs_api import say, postHighscore
 #from touch_test.py import touchedFruit
 from touch import waitForTouch
 import signal
@@ -104,6 +104,7 @@ def main():
         say("GAME OVER")
         say("YOU SCORED %d POINTS" % points)
         displayScore(points)
+        postHighscore(points) # post to highscore server
         time.sleep(3)
     
 main()
