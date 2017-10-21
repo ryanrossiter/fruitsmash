@@ -60,7 +60,6 @@ def main():
     
     pointsToWin = 10
     mainLoop = True
-    timeToHit = 2
 
     configureFruits()
     time.sleep(0.5)
@@ -68,6 +67,7 @@ def main():
     while mainLoop:
         points = 0
         gameOn = True
+        timeToHit = 2.4
 
         displayText("TOUCH ANY FRUIT\nTO BEGIN")
         say("TOUCH ANY FRUIT TO BEGIN")
@@ -91,20 +91,22 @@ def main():
                 say("GREAT JOB")
                 points += 1
 
-                if points >= pointsToWin:
-                    say("CONGRATULATIONS YOU HAVE TOUCHED %d FRUITS" % pointsToWin)
-                    say("YOU ARE A WINNER")
-                    gameOn = False
+                #if points >= pointsToWin:
+                #    say("CONGRATULATIONS YOU HAVE TOUCHED %d FRUITS" % pointsToWin)
+                #    say("YOU ARE A WINNER")
+                #    gameOn = False
             else:
                 say("YOU SUCK")
                 gameOn = False
 
             time.sleep(0.2)
+            timeToHit = 2 * ((10 - min(points / 2, 10)) / 10.0) + 0.1
+        
+        postHighscore(points) # post to highscore server
         
         say("GAME OVER")
         say("YOU SCORED %d POINTS" % points)
         displayScore(points)
-        postHighscore(points) # post to highscore server
         time.sleep(3)
     
 main()

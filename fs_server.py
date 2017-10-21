@@ -20,7 +20,7 @@ def tts():
 @app.route('/score/', methods=['POST'])
 def postScore():
     print("Got score: %s" % request.form['points'])
-    highscores.append(request.form['points'])
+    highscores.append(int(request.form['points']))
     highscores.sort()
     highscores.reverse()
     return 'GOT IT!'
@@ -32,7 +32,7 @@ def getLeaderboard():
     <h1>Fruit Smash Leaderboard</h1>
     <ol><li>%s</li></ol>
     </html></body>
-    """ % "</li><li>".join(highscores)
+    """ % "</li><li>".join([str(s) for s in highscores])
     
 
 say('FRUIT SMASH SERVER INITIALIZED')
