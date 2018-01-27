@@ -2,7 +2,11 @@
 A reaction time game for the Raspberry Pi
 ###### Developed as a project for CISC 340
 
-(Description goes here...)
+FruitSmash is a reaction time game that was built using a Raspberry Pi, multiple Capactive Touch Sensors, an LED screen, and a whole lot of fruit!
+
+Users must touch the coresponding fruit that is shown on the led screen in a matter of seconds to earn points. If the user touches the wrong fruit, the game ends and the users score is shown on a highscore board.
+
+
 
 ---
 Contributors:  
